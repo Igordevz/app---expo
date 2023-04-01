@@ -1,10 +1,18 @@
 import { Image, Text, View } from "react-native";
 import {  Background, Button, Container,  Title, } from "./style";
+import { useContext, useEffect } from "react";
+import { AuthContext } from "../../context/auth";
 
 export default function InitialPage({ navigation }:any) {
 
+    const { user }:any = useContext(AuthContext);
+    if(user?.user){
+        navigation.navigate('Home')
+    }
+   
     function Btn(){
         navigation.navigate('screen02')
+      
     }
     return (
         <Container >

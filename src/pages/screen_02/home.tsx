@@ -1,10 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState, useContext, useEffect} from 'react'
 import { Text } from 'react-native'
 import { Button } from '../initial_page/style'
 import { Container, Item, Itemc, Table, Title } from './style'
+import { AuthContext } from '../../context/auth'
+
 
 export default function Screen2({ navigation }:any) {
-
+  const { user }:any = useContext(AuthContext);
+  if(user?.user){
+   console.log("tem usuario");
+  }
   const [button, setButton] = useState(true)
   const [button2, setButton2] = useState(true)
   const [button3, setButton3] = useState(true)
@@ -12,6 +17,7 @@ export default function Screen2({ navigation }:any) {
   const [button5, setButton5] = useState(true)
   const [button6, setButton6] = useState(true)
   const [button7, setButton7] = useState(true)
+
 
 
   return (
